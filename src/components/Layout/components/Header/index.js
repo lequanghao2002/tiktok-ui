@@ -9,14 +9,12 @@ import {
     faLanguage,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
@@ -25,6 +23,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '../../AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image/Index';
 
 const cx = classNames.bind(styles);
 
@@ -144,7 +144,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                                    <UploadIcon></UploadIcon>
                                 </button>
                             </Tippy>
                         </>
@@ -157,11 +157,12 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://thienanblog.com/wp-content/uploads/2017/10/react-logo.png"
                                 className={cx('user-avatar')}
                                 alt="Le Quang Hao"
-                            ></img>
+                                fallback="https://fullstack.edu.vn/landing/sass/assets/img/f8_icon.png"
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
