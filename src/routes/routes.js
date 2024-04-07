@@ -9,6 +9,7 @@ import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Profile from '~/pages/Profile';
+import Live from '~/pages/Live';
 
 // Public routes
 const publicRoutes = [
@@ -19,6 +20,10 @@ const publicRoutes = [
     {
         path: config.routes.following,
         component: Following,
+    },
+    {
+        path: config.routes.live,
+        component: Live,
     },
     {
         path: config.routes.profile,
