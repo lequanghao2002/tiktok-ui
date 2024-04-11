@@ -11,8 +11,6 @@ function SuggestedAccounts({ label }) {
             <p className={cx('label')}>{label}</p>
 
             <AccountItem />
-            <AccountItem />
-            <AccountItem />
 
             <p className={cx('more-btn')}>See all</p>
         </div>
